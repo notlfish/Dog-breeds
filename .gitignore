@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Emacs temp files
+.#*
+
+# webpack compilation output
+dist/
