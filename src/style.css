@@ -1,3 +1,32 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #f6f6f6
+}
+
 h1 {
   color: darkcyan;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.breed-entry {
+  margin: 50px;
+  height: 400px;
+  width: 350px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px lightgray solid;
+  border-radius: 5px;
+}
+
+.breed-picture {
+  width: 330px;
+  height: auto;
 }
