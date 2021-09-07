@@ -1,4 +1,6 @@
-import load from './modules/load-home';
+import loadBreeds from './modules/load-breeds-home';
+import '../style.css';
+import pagination from './modules/pagination-home';
 
 const addItem = () => {
   const newItem = '<li>Mientras miro las nuevas olas</li>';
@@ -6,6 +8,10 @@ const addItem = () => {
   list.innerHTML += newItem;
 };
 
-document.addEventListener('DOMContentLoaded', load());
+document.addEventListener('DOMContentLoaded', (...e) => {
+  loadBreeds(...e);
+  pagination(...e);
+
+});
 
 export default addItem;

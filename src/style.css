@@ -1,3 +1,18 @@
 h1 {
   color: darkcyan;
 }
+
+li {
+  list-style: none;
+}
+
+.list-container {
+  width: 80vh;
+  height: 80vh;
+  display: flex;
+}
+
+.breed-img {
+  height: 160px;
+  width: 160px;
+}
