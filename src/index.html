@@ -13,5 +13,74 @@
       <h3 class="breed-name">Airedale Terrier</h3>
       <button class="breed-comments">Comments</button>
     </div>
+    <article id="popup-article">
+      <div id="popup-container">
+        <div class="popup-scroll">
+          <button id="close-popup">X</button>
+          <div id="popup-image">
+            <img class="popup-image"
+                 src="https://cdn2.thedogapi.com/images/Kar3rW9L2.jpg">
+          </div>
+          <h2 class="popup-breed-name">Border Collie</h2>
+          <div id="popup-info">
+            <div class="info-row">
+              <p class="popup-info-entry">
+                <span class="info-entry-label">Breed group:</span>
+                Herding
+              </p>
+              <p class="popup-info-entry">
+                <span class="info-entry-label">Bred for:</span>
+                Sheep herder
+              </p>
+            </div>
+            <div class="info-row">
+              <p class="popup-info-entry">
+                <span class="info-entry-label">Lifespan:</span>
+                12 - 16 years
+              </p>
+              <p class="popup-info-entry">
+                <span class="info-entry-label">Height [cm]:</span>
+                46 - 56
+              </p>
+            </div>
+            <div class="info-row">
+              <p class="popup-info-entry">
+                <span class="info-entry-label">Temperament:</span>
+                Tenacious, Keen, Energetic, Responsive, Alert, Intelligent
+              </p>
+              <div>
+              </div>
+            </div>
+          </div>
+          <div id="comments-container">
+            <h3>Comments <span id="comments-counter">(3)</span></h3>
+            <ul id="comments-list">
+              <li class="comment">
+                <span class="comment-date">3/10/2021</span>
+                <span class="commenter">Malena:</span>
+                <span class="comment-content">Who's a good boy?</span>
+              </li>
+              <li class="comment">
+                <span class="comment-date">4/10/2021</span>
+                <span class="commenter">Alice:</span>
+                <span class="comment-content">Clever little thing!</span>
+              </li>
+              <li class="comment">
+                <span class="comment-date">5/10/2021</span>
+                <span class="commenter">Juan:</span>
+                <span class="comment-content">Such a busy girl!</span>
+              </li>
+            </ul>
+          </div>
+          <h3>Add a comment</h3>
+          <form id="new-comment">
+            <input type="text" id="new-comment-name" class="my-5"
+                   placeholder="Your name">
+            <textarea id="new-comment-content" class="my-5"
+                      placeholder="Your insight">
+            </textarea>
+            <button id="new-comment-submit">Comment</button>
+          </form>
+    </article>
   </body>
 </html>
