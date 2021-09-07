@@ -67,4 +67,8 @@ li {
   li {
     width: 90%;
   }
+
+  .likes-container {
+    width: 40%;
+  }
 }
