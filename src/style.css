@@ -52,8 +52,7 @@ li {
 
 .name-like-container {
   display: flex;
-  margin-left: auto;
-  width: 90%;
+  width: 50%;
 }
 
 .likes-container {
@@ -62,4 +61,10 @@ li {
   flex-direction: column;
   align-items: center;
   width: 33.33%;
+}
+
+@media (max-width: 940px) {
+  li {
+    width: 90%;
+  }
 }
