@@ -11,7 +11,6 @@ const addItem = () => {
 document.addEventListener('DOMContentLoaded', (...e) => {
   loadBreeds(...e);
   pagination(...e);
-
 });
 
 export default addItem;

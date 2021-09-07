@@ -3,9 +3,8 @@ import likeIcon from '../../img/heart-icon.png';
 
 const loadBreeds = async () => {
   const dogBreeds = await getBreeds();
-  console.log(dogBreeds);
   const listContainer = document.querySelector('.list-container');
-  dogBreeds.forEach(e => {
+  dogBreeds.forEach((e) => {
     listContainer.innerHTML += `<li id="${e.id}">
     <img class="breed-img" src="${e.image.url}">
     <div class="name-like-container">
@@ -17,8 +16,7 @@ const loadBreeds = async () => {
     </div>
     <button id="comment-${e.id}">Comments</button>
     </li>`;
-  })
-
+  });
 };
 
 export default loadBreeds;
