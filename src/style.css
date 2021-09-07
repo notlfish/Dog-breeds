@@ -2,17 +2,56 @@ h1 {
   color: darkcyan;
 }
 
+h4 {
+  font-size: 12px;
+}
+
 li {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+  height: 300px;
+
 }
 
 .list-container {
-  width: 80vh;
+  width: 90%;
   height: 80vh;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .breed-img {
-  height: 160px;
-  width: 160px;
+  height: 190px;
+  width: 190px;
+}
+
+.names {
+  font-size: 18px;
+  text-align: left;
+}
+
+.like-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+  margin-bottom: -10px;
+}
+
+.name-like-container {
+  display: flex;
+  margin-left: auto;
+  width: 90%;
+}
+
+.likes-container {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
 }
