@@ -1,4 +1,4 @@
-import addItem from './index';
+import addItem from '../index';
 
 test('Add one new item to the list', () => {
   document.body.innerHTML = '<div>'
