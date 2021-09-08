@@ -1,13 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
 body {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
-  background-color: #f6f6f6;
+  font-family: 'Balsamiq Sans', cursive;
 }
 
-h1 {
-  color: darkcyan;
+h4 {
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+header {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navbar {
+  margin-top: -50px;
+  margin-left: -140px;
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #739d76;
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 19px;
+  margin-left: 20px;
+}
+
+.dropdown-item {
+  text-align: center;
+}
+
+.logo {
+  background-image: url(./img/Logo.png);
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 150px;
+  background-size: contain;
+}
+
+.breed-card {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+  height: 320px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 15px 0;
+}
+
+.list-container {
+  margin-top: 50px;
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.breed-img {
+  height: 190px;
+  width: 190px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #1c251cb7;
+}
+
+.names {
+  font-size: 18px;
+  text-align: left;
+  color: #537255;
+  margin-left: 25px;
+}
+
+.like-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.name-like-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.likes-container {
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+@media (max-width: 940px) {
+  header {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    margin-top: -50px;
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-light .navbar-nav {
+    color: #739d76;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #739d76;
+    margin: 0;
+  }
+
+  .dropdown-menu {
+    border: none;
+  }
+
+  .dropdown-item {
+    text-align: center;
+    color: #739d76;
+  }
+
+  .logo {
+    background-image: url(./img/Logo.png);
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 150px;
+    background-size: contain;
+  }
+
+  .breed-card {
+    width: 90%;
+    padding: 0;
+  }
+
+  .likes-container {
+    width: 30%;
+  }
+
+  .breed-img {
+    height: 200px;
+    width: 250px;
+    border-radius: 10px;
+  }
+
+  .name-like-container {
+    width: 100%;
+    align-items: center;
+  }
+
+  .like-icon {
+    width: 20px;
+    height: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
 }
 
 .breed-entry {
@@ -110,11 +285,6 @@ h3 {
 #new-comment {
   width: 70%;
   margin: auto;
-}
-
-.my-5 {
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 #new-comment-name {

@@ -3,84 +3,109 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Capstone Project</title>
   </head>
   <body>
-    <h1>Doggos</h1>
-    <div class="breed-entry">
-      <img class="breed-picture"
-           src="https://cdn2.thedogapi.com/images/QWRBrrIvB.jpg">
-      <h3 class="breed-name">Airedale Terrier</h3>
-      <button class="breed-comments">Comments</button>
-    </div>
-    <article id="popup-article">
-      <div id="popup-container">
-        <div class="popup-scroll">
-          <button id="close-popup">X</button>
-          <div id="popup-image">
-            <img class="popup-image"
-                 src="https://cdn2.thedogapi.com/images/Kar3rW9L2.jpg">
-          </div>
-          <h2 class="popup-breed-name">Border Collie</h2>
-          <div id="popup-info">
-            <div class="info-row">
-              <p class="popup-info-entry">
-                <span class="info-entry-label">Breed group:</span>
-                Herding
-              </p>
-              <p class="popup-info-entry">
-                <span class="info-entry-label">Bred for:</span>
-                Sheep herder
-              </p>
+    <header class="header">
+      <div class="logo"></div>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Groups
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Terriers</a>
+                <a class="dropdown-item" href="#">Hunters</a>
+                <a class="dropdown-item" href="#">Guard</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <ul class="list-container"></ul>
+      <ul class="pagination"></ul>
+      <article id="popup-article">
+        <div id="popup-container">
+          <div class="popup-scroll">
+            <button id="close-popup">X</button>
+            <div id="popup-image">
+              <img class="popup-image"
+                   src="https://cdn2.thedogapi.com/images/Kar3rW9L2.jpg">
             </div>
-            <div class="info-row">
-              <p class="popup-info-entry">
-                <span class="info-entry-label">Lifespan:</span>
-                12 - 16 years
-              </p>
-              <p class="popup-info-entry">
-                <span class="info-entry-label">Height [cm]:</span>
-                46 - 56
-              </p>
-            </div>
-            <div class="info-row">
-              <p class="popup-info-entry">
-                <span class="info-entry-label">Temperament:</span>
-                Tenacious, Keen, Energetic, Responsive, Alert, Intelligent
-              </p>
-              <div>
+            <h2 class="popup-breed-name">Border Collie</h2>
+            <div id="popup-info">
+              <div class="info-row">
+                <p class="popup-info-entry">
+                  <span class="info-entry-label">Breed group:</span>
+                  Herding
+                </p>
+                <p class="popup-info-entry">
+                  <span class="info-entry-label">Bred for:</span>
+                  Sheep herder
+                </p>
+              </div>
+              <div class="info-row">
+                <p class="popup-info-entry">
+                  <span class="info-entry-label">Lifespan:</span>
+                  12 - 16 years
+                </p>
+                <p class="popup-info-entry">
+                  <span class="info-entry-label">Height [cm]:</span>
+                  46 - 56
+                </p>
+              </div>
+              <div class="info-row">
+                <p class="popup-info-entry">
+                  <span class="info-entry-label">Temperament:</span>
+                  Tenacious, Keen, Energetic, Responsive, Alert, Intelligent
+                </p>
+                <div>
+                </div>
               </div>
             </div>
-          </div>
-          <div id="comments-container">
-            <h3>Comments <span id="comments-counter">(3)</span></h3>
-            <ul id="comments-list">
-              <li class="comment">
-                <span class="comment-date">3/10/2021</span>
-                <span class="commenter">Malena:</span>
-                <span class="comment-content">Who's a good boy?</span>
-              </li>
-              <li class="comment">
-                <span class="comment-date">4/10/2021</span>
-                <span class="commenter">Alice:</span>
-                <span class="comment-content">Clever little thing!</span>
-              </li>
-              <li class="comment">
-                <span class="comment-date">5/10/2021</span>
-                <span class="commenter">Juan:</span>
-                <span class="comment-content">Such a busy girl!</span>
-              </li>
-            </ul>
-          </div>
-          <h3>Add a comment</h3>
-          <form id="new-comment">
-            <input type="text" id="new-comment-name" class="my-5"
-                   placeholder="Your name">
-            <textarea id="new-comment-content" class="my-5"
-                      placeholder="Your insight">
-            </textarea>
-            <button id="new-comment-submit">Comment</button>
-          </form>
-    </article>
+            <div id="comments-container">
+              <h3>Comments <span id="comments-counter">(3)</span></h3>
+              <ul id="comments-list">
+                <li class="comment">
+                  <span class="comment-date">3/10/2021</span>
+                  <span class="commenter">Malena:</span>
+                  <span class="comment-content">Who's a good boy?</span>
+                </li>
+                <li class="comment">
+                  <span class="comment-date">4/10/2021</span>
+                  <span class="commenter">Alice:</span>
+                  <span class="comment-content">Clever little thing!</span>
+                </li>
+                <li class="comment">
+                  <span class="comment-date">5/10/2021</span>
+                  <span class="commenter">Juan:</span>
+                  <span class="comment-content">Such a busy girl!</span>
+                </li>
+              </ul>
+            </div>
+            <h3>Add a comment</h3>
+            <form id="new-comment">
+              <input type="text" id="new-comment-name" class="my-2"
+                     placeholder="Your name">
+              <textarea id="new-comment-content" class="my-2"
+                        placeholder="Your insight">
+              </textarea>
+              <button id="new-comment-submit">Comment</button>
+            </form>
+      </article>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
   </body>
 </html>
