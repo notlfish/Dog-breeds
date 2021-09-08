@@ -35,6 +35,7 @@ header {
   color: #739d76;
   font-family: 'Balsamiq Sans', cursive;
   font-size: 19px;
+  margin-left: 20px;
 }
 
 .dropdown-item {
@@ -136,6 +137,7 @@ header {
     align-items: center;
     justify-content: center;
     color: #739d76;
+    margin: 0;
   }
 
   .dropdown-menu {
