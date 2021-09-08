@@ -36,9 +36,14 @@ const displayCommentCounter = (container, comments) => {
   counterDisplay.innerHTML = `(${comments.length})`;
 };
 
+const removeListeners = (element) => {
+  const newElement = element.cloneNode(true);
+  element.parentNode.replaceChild(newElement, element);
+};
+
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
-  removeListeners(popup.querySelector('#new-comment'))
+  removeListeners(popup.querySelector('#new-comment'));
   popup.classList.add('d-none');
 };
 
@@ -62,11 +67,6 @@ const postCommentsListener = (breedId, commentButton, popup) => (event) => {
       content.value = '';
       displayComments(breedId, popup);
     });
-};
-
-const removeListeners = (element) => {
-  const newElement = element.cloneNode(true);
-  element.parentNode.replaceChild(newElement, element);
 };
 
 const openPopupListener = (commentButton, popup) => async (event) => {
