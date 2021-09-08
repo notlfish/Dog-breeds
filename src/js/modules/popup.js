@@ -34,7 +34,7 @@ const displayComment = (container, comment) => {
 const displayCommentCounter = (container, comments) => {
   const counterDisplay = container.querySelector('#comments-counter');
   counterDisplay.innerHTML = `(${comments.length})`;
-}
+};
 
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
