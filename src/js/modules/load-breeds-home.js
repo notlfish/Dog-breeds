@@ -6,7 +6,7 @@ const loadBreeds = async () => {
   const listContainer = document.querySelector('.list-container');
   dogBreeds.forEach((e) => {
     if (document.querySelectorAll('li').length < 21) {
-      listContainer.innerHTML += `<li id="${e.id}">
+      listContainer.innerHTML += `<li id="${e.id}" class="breed-card">
       <img class="breed-img" src="${e.image.url}">
       <div class="name-like-container">
       <h2 class="names">${e.name}</h2>
