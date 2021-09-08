@@ -21,7 +21,7 @@ export const displayBreedInfo = (container, info) => {
   });
 };
 
-export const displayComment = (container, comment) => {
+const displayComment = (container, comment) => {
   const commentDisplay = document.createElement('li');
   commentDisplay.innerHTML = `
     <span class="comment-date">${comment.creation_date}</span>
@@ -30,6 +30,11 @@ export const displayComment = (container, comment) => {
 `;
   container.appendChild(commentDisplay);
 };
+
+const displayCommentCounter = (container, comments) => {
+  const counterDisplay = container.querySelector('#comments-counter');
+  counterDisplay.innerHTML = `(${comments.length})`;
+}
 
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
@@ -45,7 +50,10 @@ const openPopupListener = (commentButton, popup) => (event) => {
   fetchComments(breedId).then((comments) => {
     const commentsContainer = popup.querySelector('#comments-list');
     commentsContainer.innerHTML = '';
-    comments.forEach((comment) => { displayComment(commentsContainer, comment); });
+    if (comments.error) comments = [];
+    displayCommentCounter(popup, comments);
+    Array.from(comments)
+      .forEach((comment) => { displayComment(commentsContainer, comment); });
     popup.classList.remove('d-none');
   });
 };
