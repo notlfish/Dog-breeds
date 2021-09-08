@@ -1,4 +1,5 @@
 import { KEY_PREFIX } from './load-breeds-home';
+import { fetchComments } from './comments-api-handler';
 
 export const displayBreedInfo = (container, info) => {
   const imageContainer = container.querySelector('#popup-image');
@@ -20,6 +21,16 @@ export const displayBreedInfo = (container, info) => {
   });
 };
 
+export const displayComment = (container, comment) => {
+  const commentDisplay = document.createElement('li');
+  commentDisplay.innerHTML = `
+    <span class="comment-date">${comment.creation_date}</span>
+    <span class="commenter">${comment.username}:</span>
+    <span class="comment-content">${comment.comment}</span>
+`;
+  container.appendChild(commentDisplay);
+};
+
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
   popup.classList.add('d-none');
@@ -31,7 +42,12 @@ const openPopupListener = (commentButton, popup) => (event) => {
   const storageKey = `${KEY_PREFIX}-${breedId}`;
   const breedInfo = JSON.parse(localStorage.getItem(storageKey));
   displayBreedInfo(popup, breedInfo);
-  popup.classList.remove('d-none');
+  fetchComments(breedId).then((comments) => {
+    const commentsContainer = popup.querySelector('#comments-list');
+    commentsContainer.innerHTML = '';
+    comments.forEach((comment) => { displayComment(commentsContainer, comment); });
+    popup.classList.remove('d-none');
+  });
 };
 
 export default openPopupListener;
