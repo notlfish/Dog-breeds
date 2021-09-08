@@ -44,9 +44,9 @@ header {
 .logo {
   background-image: url(./img/Logo.png);
   background-repeat: no-repeat;
-  height: 300px;
-  width: 250px;
-  background-size: auto;
+  height: 200px;
+  width: 150px;
+  background-size: contain;
 }
 
 .breed-card {
@@ -109,15 +109,6 @@ header {
   width: 25%;
 }
 
-.logo {
-  background-image: url(./img/Logo.png);
-  background-repeat: no-repeat;
-  height: 200px;
-  width: 150px;
-  background-size: contain;
-
-}
-
 @media (max-width: 940px) {
   header {
     margin-top: 30px;
@@ -136,14 +127,15 @@ header {
     justify-content: center;
   }
 
-  .navbar-light .navbar-nav .nav-link {
+  .navbar-light .navbar-nav {
     color: #739d76;
-}
+  }
 
   .nav-link {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #739d76;
   }
 
   .dropdown-menu {
@@ -173,7 +165,7 @@ header {
   }
 
   .breed-img {
-    height: 200x;
+    height: 200px;
     width: 250px;
     border-radius: 10px;
   }
