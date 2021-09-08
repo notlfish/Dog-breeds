@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', (...e) => {
       Array.from(commentButtons).forEach((button) => {
         button.addEventListener('click', openPopupListener(button, popup));
       });
+    })
+    .then(() => {
+      document.getElementById('footer').classList.remove('d-none');
     });
   pagination(...e);
 });
