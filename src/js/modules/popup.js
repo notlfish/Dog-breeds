@@ -38,6 +38,7 @@ const displayCommentCounter = (container, comments) => {
 
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
+  removeListeners(popup.querySelector('#new-comment'))
   popup.classList.add('d-none');
 };
 
@@ -66,7 +67,6 @@ const postCommentsListener = (breedId, commentButton, popup) => (event) => {
 const removeListeners = (element) => {
   const newElement = element.cloneNode(true);
   element.parentNode.replaceChild(newElement, element);
-  return newElement;
 };
 
 const openPopupListener = (commentButton, popup) => async (event) => {
@@ -76,7 +76,7 @@ const openPopupListener = (commentButton, popup) => async (event) => {
   const breedInfo = JSON.parse(localStorage.getItem(storageKey));
   await displayBreedInfo(popup, breedInfo);
   await displayComments(breedId, popup);
-  const form = removeListeners(popup.querySelector('#new-comment'));
+  const form = popup.querySelector('#new-comment');
   form.addEventListener('submit',
     postCommentsListener(breedId, commentButton, popup));
   popup.classList.remove('d-none');
