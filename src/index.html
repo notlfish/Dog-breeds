@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/652f8ed312.js" crossorigin="anonymous"></script>
     <title>Capstone Project</title>
   </head>
   <body>
@@ -35,40 +36,38 @@
     <main class="container">
       <ul class="list-container"></ul>
       <ul class="pagination"></ul>
-      <article id="popup-article">
+      <article id="popup-article" class="d-none">
         <div id="popup-container">
           <div class="popup-scroll">
-            <button id="close-popup">X</button>
+            <button id="close-popup"><i class="fa fa-window-close fs-3" aria-hidden="true"></i></button>
             <div id="popup-image">
-              <img class="popup-image"
-                   src="https://cdn2.thedogapi.com/images/Kar3rW9L2.jpg">
             </div>
-            <h2 class="popup-breed-name">Border Collie</h2>
+            <h2 class="popup-breed-name"></h2>
             <div id="popup-info">
               <div class="info-row">
                 <p class="popup-info-entry">
                   <span class="info-entry-label">Breed group:</span>
-                  Herding
+                  <span id="popup-breed_group"></span>
                 </p>
                 <p class="popup-info-entry">
                   <span class="info-entry-label">Bred for:</span>
-                  Sheep herder
+                  <span id="popup-bred_for"></span>
                 </p>
               </div>
               <div class="info-row">
                 <p class="popup-info-entry">
                   <span class="info-entry-label">Lifespan:</span>
-                  12 - 16 years
+                  <span id="popup-life_span"></span>
                 </p>
                 <p class="popup-info-entry">
                   <span class="info-entry-label">Height [cm]:</span>
-                  46 - 56
+                  <span id="popup-height"></span>
                 </p>
               </div>
               <div class="info-row">
                 <p class="popup-info-entry">
                   <span class="info-entry-label">Temperament:</span>
-                  Tenacious, Keen, Energetic, Responsive, Alert, Intelligent
+                  <span id="popup-temperament"></span>
                 </p>
                 <div>
                 </div>
