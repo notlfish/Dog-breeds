@@ -5,13 +5,8 @@ jest.mock('../modules/load-counter-home');
 describe('test load li elements function', () => {
   describe('counter', () => {
     test('must count 21 elements in homepage', () => {
-      document.body.innerHTML = '<header class="header">'
-      +'<div class="logo"></div>'
-      +'</header>'
-      +'<h2 id="counter"></h2>'
-      +'<ul class="list-container"></ul>';
       // Arrange
-      const listContainer = document.querySelector('.list-container');
+      document.body.innerHTML = '<ul class="list-container"></ul>';
       // Act
       loadBreeds();
       // Assert
@@ -21,13 +16,12 @@ describe('test load li elements function', () => {
 
   describe('counter function test', () => {
     test('must display amount of li displayed', () => {
-      document.body.innerHTML = '<header class="header">'
-      +'<div class="logo"></div>'
-      +'</header>'
-      +'<h2 id="counter"></h2>'
-      +'<ul class="list-container"></ul>';
       // Arrange
-      const listContainer = document.querySelector('.list-container');
+      document.body.innerHTML = '<header class="header">'
+      + '<div class="logo"></div>'
+      + '</header>'
+      + '<h2 id="counter"></h2>'
+      + '<ul class="list-container"></ul>';
       // Act
       loadBreeds();
       loadCounter();

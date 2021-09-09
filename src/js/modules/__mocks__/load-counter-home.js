@@ -6,7 +6,7 @@ export const getBreeds = () => {
     });
   }
   return dogBreeds;
-}
+};
 
 export const KEY_PREFIX = 'breedsInfo';
 
@@ -35,7 +35,7 @@ export const loadBreeds = () => {
 };
 
 export const loadCounter = () => {
-   loadBreeds();
+  loadBreeds();
   const counter = document.querySelectorAll('li').length;
   const counterCointainer = document.getElementById('counter');
   counterCointainer.innerHTML = `Total Breeds (${counter})`;
