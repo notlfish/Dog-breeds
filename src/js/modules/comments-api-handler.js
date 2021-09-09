@@ -1,4 +1,5 @@
-const APP_KEY = 'aliNSyHfj9kbhiXrqKsy';
+import { APP_KEY } from './keys';
+
 const BASE_URL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
 const URL = `${BASE_URL}/apps/${APP_KEY}/comments`;
 const headers = {

@@ -1,7 +1,6 @@
 import getBreeds from './GET-breeds-home';
 import likeIcon from '../../img/heart-icon.png';
-
-export const KEY_PREFIX = 'breedsInfo';
+import { KEY_PREFIX } from './keys';
 
 const loadBreeds = async () => {
   const dogBreeds = await getBreeds();
