@@ -1,4 +1,5 @@
-import { KEY_PREFIX } from './load-counter-home';
+import { KEY_PREFIX } from './keys';
+import { fetchComments, postComments } from './comments-api-handler';
 
 export const displayBreedInfo = (container, info) => {
   const imageContainer = container.querySelector('#popup-image');
@@ -20,17 +21,64 @@ export const displayBreedInfo = (container, info) => {
   });
 };
 
+const displayComment = (container, comment) => {
+  const commentDisplay = document.createElement('li');
+  commentDisplay.innerHTML = `
+    <span class="comment-date">${comment.creation_date}</span>
+    <span class="commenter">${comment.username}:</span>
+    <span class="comment-content">${comment.comment}</span>
+`;
+  container.appendChild(commentDisplay);
+};
+
+const displayCommentCounter = (container, comments) => {
+  const counterDisplay = container.querySelector('#comments-counter');
+  counterDisplay.innerHTML = `(${comments.length})`;
+};
+
+const removeListeners = (element) => {
+  const newElement = element.cloneNode(true);
+  element.parentNode.replaceChild(newElement, element);
+};
+
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
+  removeListeners(popup.querySelector('#new-comment'));
   popup.classList.add('d-none');
 };
 
-const openPopupListener = (commentButton, popup) => (event) => {
+export const displayComments = async (breedId, popup) => {
+  let comments = await fetchComments(breedId);
+  const commentsContainer = popup.querySelector('#comments-list');
+  commentsContainer.innerHTML = '';
+  if (comments.error) comments = [];
+  displayCommentCounter(popup, comments);
+  Array.from(comments)
+    .forEach((comment) => { displayComment(commentsContainer, comment); });
+};
+
+const postCommentsListener = (breedId, commentButton, popup) => (event) => {
+  event.preventDefault();
+  const username = popup.querySelector('#new-comment-name');
+  const content = popup.querySelector('#new-comment-content');
+  postComments(breedId, username.value, content.value)
+    .then(() => {
+      username.value = '';
+      content.value = '';
+      displayComments(breedId, popup);
+    });
+};
+
+const openPopupListener = (commentButton, popup) => async (event) => {
   event.preventDefault();
   const breedId = commentButton.closest('.breed-card').id;
   const storageKey = `${KEY_PREFIX}-${breedId}`;
   const breedInfo = JSON.parse(localStorage.getItem(storageKey));
-  displayBreedInfo(popup, breedInfo);
+  await displayBreedInfo(popup, breedInfo);
+  await displayComments(breedId, popup);
+  const form = popup.querySelector('#new-comment');
+  form.addEventListener('submit',
+    postCommentsListener(breedId, commentButton, popup));
   popup.classList.remove('d-none');
 };
 
