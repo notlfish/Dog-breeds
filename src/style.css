@@ -65,7 +65,6 @@ header {
 .list-container {
   margin-top: 50px;
   width: 90%;
-  height: 80vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -219,6 +218,7 @@ p {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 100;
 }
 
 #popup-container {
@@ -305,4 +305,16 @@ h3 {
   display: block;
   margin: auto;
   padding: 5px 10px;
+}
+
+#footer {
+  line-height: 50px;
+  border-top: 1px solid black;
+  width: 100%;
+  padding: 0 30px;
+  background-color: white;
+}
+
+footer a {
+  text-decoration: none;
 }
