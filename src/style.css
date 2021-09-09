@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200&display=swap');
 
 body {
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Biryani', sans-serif;
 }
 
 h4 {
@@ -116,7 +116,17 @@ header {
   width: 25%;
 }
 
-@media (max-width: 940px) {
+.comment-button {
+  background-color: #739d76;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #739d769a;
+  font-weight: bold;
+  padding: 8px 5px 5px 5px;
+}
+
+@media (max-width: 992px) {
   header {
     margin-top: 30px;
     display: flex;
