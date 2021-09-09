@@ -1,4 +1,4 @@
-import { KEY_PREFIX } from './load-breeds-home';
+import { KEY_PREFIX } from './keys';
 import { fetchComments, postComments } from './comments-api-handler';
 
 export const displayBreedInfo = (container, info) => {
@@ -47,7 +47,7 @@ export const closePopupListener = (popup) => (event) => {
   popup.classList.add('d-none');
 };
 
-const displayComments = async (breedId, popup) => {
+export const displayComments = async (breedId, popup) => {
   let comments = await fetchComments(breedId);
   const commentsContainer = popup.querySelector('#comments-list');
   commentsContainer.innerHTML = '';
