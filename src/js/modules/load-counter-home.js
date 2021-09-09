@@ -6,10 +6,12 @@ export const KEY_PREFIX = 'breedsInfo';
 const loadBreeds = async () => {
   const dogBreeds = await getBreeds();
   const listContainer = document.querySelector('.list-container');
+  const dogBreedsArray = [];
   dogBreeds.forEach((breed) => {
     dogBreedsArray.push(breed);
     breed.likeStatus = 'notLiked';
-    breed.likeIcon = `like-icon${breed.id}`
+    breed.likeIcon = `like-icon${breed.id}`;
+    // Counter
     if (document.querySelectorAll('li').length < 21) {
       breed.height = breed.height.metric;
       localStorage.setItem(`${KEY_PREFIX}-${breed.id}`, JSON.stringify(breed));
@@ -26,6 +28,7 @@ const loadBreeds = async () => {
       </li>`;
     }
   });
+  localStorage.setItem('breedStorage', JSON.stringify(dogBreedsArray));
 };
 
 export default loadBreeds;

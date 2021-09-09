@@ -1,4 +1,4 @@
-import { KEY_PREFIX } from './load-breeds-home';
+import { KEY_PREFIX } from './load-counter-home';
 
 export const displayBreedInfo = (container, info) => {
   const imageContainer = container.querySelector('#popup-image');
