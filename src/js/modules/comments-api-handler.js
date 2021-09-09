@@ -9,7 +9,7 @@ export const fetchComments = async (breedId) => {
   const query = `?item_id=${breedId.toString()}`;
   let allComments = await fetch(`${URL}${query}`);
   allComments = await allComments.json();
-  return Array.from(allComments);
+  return allComments;
 };
 
 export const postComments = (breedId, username, comment) => {
