@@ -1,5 +1,5 @@
 import { KEY_PREFIX } from './load-breeds-home';
-import { fetchComments } from './comments-api-handler';
+import { fetchComments, postComments } from './comments-api-handler';
 
 export const displayBreedInfo = (container, info) => {
   const imageContainer = container.querySelector('#popup-image');
@@ -36,26 +36,50 @@ const displayCommentCounter = (container, comments) => {
   counterDisplay.innerHTML = `(${comments.length})`;
 };
 
+const removeListeners = (element) => {
+  const newElement = element.cloneNode(true);
+  element.parentNode.replaceChild(newElement, element);
+};
+
 export const closePopupListener = (popup) => (event) => {
   event.preventDefault();
+  removeListeners(popup.querySelector('#new-comment'));
   popup.classList.add('d-none');
 };
 
-const openPopupListener = (commentButton, popup) => (event) => {
+const displayComments = async (breedId, popup) => {
+  let comments = await fetchComments(breedId);
+  const commentsContainer = popup.querySelector('#comments-list');
+  commentsContainer.innerHTML = '';
+  if (comments.error) comments = [];
+  displayCommentCounter(popup, comments);
+  Array.from(comments)
+    .forEach((comment) => { displayComment(commentsContainer, comment); });
+};
+
+const postCommentsListener = (breedId, commentButton, popup) => (event) => {
+  event.preventDefault();
+  const username = popup.querySelector('#new-comment-name');
+  const content = popup.querySelector('#new-comment-content');
+  postComments(breedId, username.value, content.value)
+    .then(() => {
+      username.value = '';
+      content.value = '';
+      displayComments(breedId, popup);
+    });
+};
+
+const openPopupListener = (commentButton, popup) => async (event) => {
   event.preventDefault();
   const breedId = commentButton.closest('.breed-card').id;
   const storageKey = `${KEY_PREFIX}-${breedId}`;
   const breedInfo = JSON.parse(localStorage.getItem(storageKey));
-  displayBreedInfo(popup, breedInfo);
-  fetchComments(breedId).then((comments) => {
-    const commentsContainer = popup.querySelector('#comments-list');
-    commentsContainer.innerHTML = '';
-    if (comments.error) comments = [];
-    displayCommentCounter(popup, comments);
-    Array.from(comments)
-      .forEach((comment) => { displayComment(commentsContainer, comment); });
-    popup.classList.remove('d-none');
-  });
+  await displayBreedInfo(popup, breedInfo);
+  await displayComments(breedId, popup);
+  const form = popup.querySelector('#new-comment');
+  form.addEventListener('submit',
+    postCommentsListener(breedId, commentButton, popup));
+  popup.classList.remove('d-none');
 };
 
 export default openPopupListener;
