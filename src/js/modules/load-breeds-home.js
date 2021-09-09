@@ -7,6 +7,9 @@ const loadBreeds = async () => {
   const dogBreeds = await getBreeds();
   const listContainer = document.querySelector('.list-container');
   dogBreeds.forEach((breed) => {
+    dogBreedsArray.push(breed);
+    breed.likeStatus = 'notLiked';
+    breed.likeIcon = `like-icon${breed.id}`
     if (document.querySelectorAll('li').length < 21) {
       breed.height = breed.height.metric;
       localStorage.setItem(`${KEY_PREFIX}-${breed.id}`, JSON.stringify(breed));
@@ -15,8 +18,8 @@ const loadBreeds = async () => {
       <div class="name-like-container">
       <h2 class="names">${breed.name}</h2>
       <div id="likes-container${breed.id}" class="likes-container">
-      <img id="${breed.id}" class="like-icon" src="${likeIcon}">
-      <h4 id="likes-${breed.id}">0 Likes<h4/>
+      <img id="like-icon${breed.id}" class="like-icon" src="${likeIcon}">
+      <h4 id="likes-like-icon${breed.id}">0 Likes<h4/>
       </div>
       </div>
       <button id="comment-${breed.id}" class="comment-button">Comments</button>

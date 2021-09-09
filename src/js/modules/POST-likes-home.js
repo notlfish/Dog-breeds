@@ -1,8 +1,8 @@
-export const POSTLikes = () => {
+export const POSTLikes = (id) => {
   fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aliNSyHfj9kbhiXrqKsy/likes/', {
     method: 'POST',
     body: JSON.stringify({
-      item_id: '1',
+      item_id: `${id}`,
     }),
     headers: {
     'Content-type': 'application/json; charset=UTF-8',

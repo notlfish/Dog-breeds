@@ -16,5 +16,5 @@ export const loadLikes = async () => {
     if (likesElement) {
       likesElement.innerHTML = `${item.likes} Likes`;
     }
-  })
+  });
 }
