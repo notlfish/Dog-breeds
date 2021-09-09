@@ -20,7 +20,7 @@ You can visit the Live Demo or clone the repository and open the dist/html.index
 
 To get a local copy of this repo follow these simple example steps:
 - `git clone https://github.com/notlfish/Dog-breeds` to copy the repo.
-- Follow the [Set-up and Install](#Set-up-&-Install) instructions.
+- Follow the [Set-up and Install](#set-up--install) instructions.
 
 ### Prerequisites
 
