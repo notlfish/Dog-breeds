@@ -7,18 +7,20 @@
 
 ## Built With
 
-- HTML-CSS-JAVASCRIPT-WEBPACK-JEST
+- HTML-CSS-JavaScript-Webpack-Jest
 
 ## Live Demo
 
-[Visit Live Demo Link](...)
+[Visit Live Demo Link](https://notlfish.github.io/Dog-breeds/)
 
 
 ## Getting Started
 
 You can visit the Live Demo or clone the repository and open the dist/html.index file with your browser to see the project.
 
-To get a local copy up and running follow these simple example steps
+To get a local copy of this repo follow these simple example steps:
+- `git clone https://github.com/notlfish/Dog-breeds` to copy the repo.
+- Follow the [Set-up and Install](#Set-up-&-Install) instructions.
 
 ### Prerequisites
 
@@ -26,33 +28,19 @@ To get a local copy up and running follow these simple example steps
 
 ### Set-up & Install
 
-- [First clone the repo](https://github.com/notlfish/JavaScript-Capstone/) and checkout the latest branch.
+- [First clone the repo](https://github.com/notlfish/Dog-breeds) and checkout the latest branch.
 
-- To install the latest release or a specific version, run one of the following commands:
+To install the latest release or a specific version, run one of the following commands:
 
-npm install --save-dev webpack
+- `npm install && npm install --dev` to install the project's dependencies.
+- `npm start` to start the web server.
+- Visit `http://localhost:8080/` to see the project.
 
-or specific version
+To run the tests of the project (on the project's root directory):
+- `npm run test` to run the test suite.
+- `npx eslint . && npx stylelint "**/*.{css,scss}"` to run the linters.
 
-npm install --save-dev webpack@<version>
-
-
-- If you're using webpack v4 or later and want to call webpack from the command line, you'll also need to install the CLI.
-
-npm install --save-dev webpack-cli
-
-
-- The webpack-dev-server provides you with a rudimentary web server to see the project. Let's set it up:
-
-npm install --save-dev webpack-dev-server
-
-
-### Usage
-
-- Please run - npm run build - and then run - npm start - on the project folder.
-
-
-👤 **Authors**
+## 👤 **Authors**
 
 **Juan Felipe Gomez Tobon**
 
@@ -60,11 +48,11 @@ npm install --save-dev webpack-dev-server
 - Twitter: [@twitterhandle](https://twitter.com/JuanFGT05)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/juan-felipe-gomez-tobon/)
 
-**Lucas**
+👤 **Lucas Ferrari Soto**
 
-- GitHub: [@githubhandle](...)
-- Twitter: [@twitterhandle](...)
-- LinkedIn: [LinkedIn](...)
+- GitHub: [@notlfish](https://github.com/notlfish)
+- Twitter: [@LucasFerrariSo1](https://twitter.com/LucasFerrariSo1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lucas-mauricio-ferrari-soto-472a3515a/)
 
 ## Show your support
 
@@ -72,7 +60,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Thanks to Microverse for make it possible!
+- Thanks to Microverse for making it possible!
 
 ## 📝 License
 
