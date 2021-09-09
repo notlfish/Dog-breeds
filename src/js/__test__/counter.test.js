@@ -8,11 +8,11 @@ describe('test counter function', () => {
       document.body.innerHTML = '<ul class="list-container"></ul>';
       // Arrange
       const dogBreeds = [];
-      for(let i = 0; i < 200; i += 1){
+      for (let i = 0; i < 200; i += 1) {
         dogBreeds.push({
           id: `${i}`,
-        })
-      };
+        });
+      }
       const listContainer = document.querySelector('.list-container');
       // Act
       dogBreeds.forEach((breed) => {
