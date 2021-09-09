@@ -14,9 +14,9 @@ const loadBreeds = async () => {
       <img class="breed-img" src="${breed.image.url}">
       <div class="name-like-container">
       <h2 class="names">${breed.name}</h2>
-      <div class="likes-container">
-      <img class="like-icon" src="${likeIcon}">
-      <h4>0 likes</h4>
+      <div id="likes-container${breed.id}" class="likes-container">
+      <img id="${breed.id}" class="like-icon" src="${likeIcon}">
+      <h4 id="likes-${breed.id}">0 Likes<h4/>
       </div>
       </div>
       <button id="comment-${breed.id}" class="comment-button">Comments</button>
