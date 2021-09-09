@@ -33,7 +33,7 @@ export const loadBreeds = async () => {
 
 export const loadCounter = async () => {
   await loadBreeds();
-  let counter = document.querySelectorAll('li').length;
+  const counter = document.querySelectorAll('li').length;
   const counterCointainer = document.getElementById('counter');
   counterCointainer.innerHTML = `Total Breeds (${counter})`;
-}
+};
