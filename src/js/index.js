@@ -1,4 +1,4 @@
-import loadBreeds from './modules/load-counter-home';
+import { loadBreeds, loadCounter } from './modules/load-counter-home';
 import '../style.css';
 import openPopupListener, { closePopupListener } from './modules/popup';
 import POSTLikes from './modules/POST-likes-home';
@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', (...e) => {
         button.addEventListener('click', openPopupListener(button, popup));
       });
     });
+  loadCounter(...e);
   GETLikes(...e);
   loadLikes(...e);
 });

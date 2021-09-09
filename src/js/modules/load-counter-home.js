@@ -3,7 +3,7 @@ import likeIcon from '../../img/heart-icon.png';
 
 export const KEY_PREFIX = 'breedsInfo';
 
-const loadBreeds = async () => {
+export const loadBreeds = async () => {
   const dogBreeds = await getBreeds();
   const listContainer = document.querySelector('.list-container');
   const dogBreedsArray = [];
@@ -31,4 +31,9 @@ const loadBreeds = async () => {
   localStorage.setItem('breedStorage', JSON.stringify(dogBreedsArray));
 };
 
-export default loadBreeds;
+export const loadCounter = async () => {
+  await loadBreeds();
+  let counter = document.querySelectorAll('li').length;
+  const counterCointainer = document.getElementById('counter');
+  counterCointainer.innerHTML = `Total Breeds (${counter})`;
+}

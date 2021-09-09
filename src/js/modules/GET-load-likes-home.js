@@ -1,4 +1,4 @@
-import loadBreeds from './load-counter-home';
+import { loadBreeds } from './load-counter-home';
 
 export const GETLikes = async () => {
   const response = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/aliNSyHfj9kbhiXrqKsy/likes/', {
