@@ -36,7 +36,7 @@ export const loadBreeds = () => {
 
 export const loadCounter = () => {
   loadBreeds();
-  const counter = document.querySelectorAll('li').length;
+  const counter = document.querySelectorAll('.breed-card').length;
   const counterCointainer = document.getElementById('counter');
   counterCointainer.innerHTML = `Total Breeds (${counter})`;
 };

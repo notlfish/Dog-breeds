@@ -11,7 +11,7 @@ export const loadBreeds = async () => {
     breed.likeStatus = 'notLiked';
     breed.likeIcon = `like-icon${breed.id}`;
     // Counter
-    if (document.querySelectorAll('li').length < 21) {
+    if (document.querySelectorAll('.breed-card').length < 21) {
       breed.height = breed.height.metric;
       localStorage.setItem(`${KEY_PREFIX}-${breed.id}`, JSON.stringify(breed));
       listContainer.innerHTML += `<li id="${breed.id}" class="breed-card">
@@ -32,7 +32,7 @@ export const loadBreeds = async () => {
 
 export const loadCounter = async () => {
   await loadBreeds();
-  const counter = document.querySelectorAll('li').length;
+  const counter = document.querySelectorAll('.breed-card').length;
   const counterCointainer = document.getElementById('counter');
   counterCointainer.innerHTML = `Total Breeds (${counter})`;
 };
