@@ -1,39 +1,38 @@
-import loadBreeds from '../modules/load-counter-home';
+import { loadBreeds, loadCounter } from '../modules/load-counter-home';
 
 jest.mock('../modules/load-counter-home');
 
-describe('test counter function', () => {
+describe('test load li elements function', () => {
   describe('counter', () => {
     test('must count 21 elements in homepage', () => {
-      document.body.innerHTML = '<ul class="list-container"></ul>';
+      document.body.innerHTML = '<header class="header">'
+      +'<div class="logo"></div>'
+      +'</header>'
+      +'<h2 id="counter"></h2>'
+      +'<ul class="list-container"></ul>';
       // Arrange
-      const dogBreeds = [];
-      for (let i = 0; i < 200; i += 1) {
-        dogBreeds.push({
-          id: `${i}`,
-        });
-      }
       const listContainer = document.querySelector('.list-container');
       // Act
-      dogBreeds.forEach((breed) => {
-        breed.likeStatus = 'notLiked';
-        // Counter
-        if (document.querySelectorAll('li').length < 21) {
-          listContainer.innerHTML += `<li id="${breed.id}" class="breed-card">
-          <img class="breed-img" src="">
-          <div class="name-like-container">
-          <h2 class="names"></h2>
-          <div id="likes-container${breed.id}" class="likes-container">
-          <img id="like-icon${breed.id}" class="like-icon" src="">
-          <h4 id="likes-like-icon${breed.id}">0 Likes<h4/>
-          </div>
-          </div>
-          <button id="comment-${breed.id}" class="comment-button">Comments</button>
-          </li>`;
-        }
-      });
+      loadBreeds();
       // Assert
       expect(document.querySelectorAll('li').length).toBe(21);
+    });
+  });
+
+  describe('counter function test', () => {
+    test('must display amount of li displayed', () => {
+      document.body.innerHTML = '<header class="header">'
+      +'<div class="logo"></div>'
+      +'</header>'
+      +'<h2 id="counter"></h2>'
+      +'<ul class="list-container"></ul>';
+      // Arrange
+      const listContainer = document.querySelector('.list-container');
+      // Act
+      loadBreeds();
+      loadCounter();
+      // Assert
+      expect(document.getElementById('counter').innerHTML).toBe('Total Breeds (21)');
     });
   });
 });
